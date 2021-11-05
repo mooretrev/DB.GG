@@ -1,0 +1,7 @@
+frontend/node_modules
+**/**.pyc
+venv
+**.DS_Store
+static
+db.sqlite3
+frontend/build

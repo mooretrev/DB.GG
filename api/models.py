@@ -23,6 +23,7 @@ class Game(ModelBase):
     description = models.TextField(default='')
     coverart = models.TextField(default='')
     copies_sold = models.IntegerField(default=-1)
+    date_released = models.TextField(default='')
     publisher = models.ForeignKey(
         Publisher,
         default=None,
@@ -35,8 +36,6 @@ class Game(ModelBase):
         blank=True,
         null=True,
         on_delete=models.SET_NULL)
-    categories = models.TextField(default='')
-    genres = models.TextField(default='')
 
 class Genre(ModelBase):
     name = TextField(default='')

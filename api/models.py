@@ -35,8 +35,7 @@ class Game(ModelBase):
         blank=True,
         null=True,
         on_delete=models.SET_NULL)
-    categories = models.TextField(default='')
-    genres = models.TextField(default='')
+    date_released = models.TextField(default='')
 
 class Genre(ModelBase):
     name = TextField(default='')

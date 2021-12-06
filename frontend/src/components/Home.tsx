@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Grid, TextField } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import people from './logo.png'
@@ -6,6 +6,8 @@ import people from './logo.png'
 import "./styles.css"
 
 export default function Home() {
+    const [input, setInput] = useState(0);
+
     return (
         <Grid sx={{
             padding: '3rem 3rem'
@@ -14,7 +16,10 @@ export default function Home() {
                 <img className="imageHeight" src={people} alt="Logo" />
             </Grid>
             <Grid item xs={12}>
-                <TextField fullWidth variant="outlined" label="Search" />
+                <SearchBar
+                    onChange={(newInput) => setInput(newInput)}
+                    onRequestSearch={() => '/game/api/?search=' + input}
+                    />
             </Grid>
             <Grid item xs={12}>
                 <DataGrid

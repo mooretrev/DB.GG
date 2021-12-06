@@ -3,15 +3,9 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { CircularProgress, Divider, Grid, Typography, } from '@mui/material'
 import theme from '../styles/Theme'
+import GameData from '../interface/GameData'
 
 import "./gameDetail.css"
-
-export interface GameData {
-    name: string;
-    description: string;
-    coverart: string;
-    copies_sold: number;
-}
 
 export default function GameDetail() {
     const [loading, setLoading] = React.useState(false)

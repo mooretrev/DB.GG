@@ -16,10 +16,10 @@ export default function Home() {
                 <img className="imageHeight" src={people} alt="Logo" />
             </Grid>
             <Grid item xs={12}>
-                <SearchBar
+                {/* <SearchBar
                     onChange={(newInput) => setInput(newInput)}
                     onRequestSearch={() => '/game/api/?search=' + input}
-                    />
+                    /> */}
             </Grid>
             <Grid item xs={12}>
                 <DataGrid

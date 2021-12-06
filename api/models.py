@@ -13,11 +13,9 @@ class ModelBase(models.Model):
 
 class Developer(ModelBase):
     name = models.TextField(default='')
-    website = models.TextField(default='')
 
 class Publisher(ModelBase):
     name = models.TextField(default='')
-    website = models.TextField(default='')
 
 class Game(ModelBase):
     id = models.AutoField(primary_key=1)

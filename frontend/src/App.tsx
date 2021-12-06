@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import theme from './styles/Theme';
 import Home from './components/Home';
+import GameDetail from './components/GameDetail'
 import TopBar from './TopBar';
 
 export default function App() {
@@ -17,11 +18,12 @@ export default function App() {
         padding: '4rem 4rem'
       }}>
         <TopBar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/game/:id" element={<GameDetail />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
       </Paper>
     </ThemeProvider>
   );

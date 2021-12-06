@@ -5,3 +5,5 @@ venv
 static
 db.sqlite3
 frontend/build
+settings.json
+.env

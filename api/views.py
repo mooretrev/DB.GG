@@ -11,7 +11,6 @@ class GameView(ModelViewSet):
     search_fields = ['name']
 
 
-# Create your views here.
 class PublisherView(ModelViewSet):
     queryset = models.Publisher.objects.order_by('name')
     serializer_class = serializers.PublisherSerializer
@@ -19,9 +18,20 @@ class PublisherView(ModelViewSet):
     ordering_fields = '__all__'
 
 
-# # Create your views here.
 class DeveloperView(ModelViewSet):
     queryset = models.Developer.objects.order_by('name')
     serializer_class = serializers.DeveloperSerializer
+    filterset_fields = '__all__'
+    ordering_fields = '__all__'
+
+class GenreView(ModelViewSet):
+    queryset = models.Genre.objects.order_by('name')
+    serializer_class = serializers.GenreSerializer
+    filterset_fields = '__all__'
+    ordering_fields = '__all__'
+
+class GenreToGameView(ModelViewSet):
+    queryset = models.GenreToGame.objects.order_by('pk')
+    serializer_class = serializers.GenreToGameSerializer
     filterset_fields = '__all__'
     ordering_fields = '__all__'

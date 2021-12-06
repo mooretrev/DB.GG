@@ -16,3 +16,13 @@ class PublisherSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Publisher
         fields = '__all__'
+
+class GenreToGameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.GenreToGame
+        fields = '__all__'
+
+class GenreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Genre
+        fields = '__all__'

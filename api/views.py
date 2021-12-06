@@ -8,6 +8,7 @@ class GameView(ModelViewSet):
     serializer_class = serializers.GameSerializer
     filterset_fields = '__all__'
     ordering_fields = '__all__'
+    search_fields = ['name']
 
 
 # Create your views here.

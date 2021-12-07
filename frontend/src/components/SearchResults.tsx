@@ -11,19 +11,19 @@ export default function SearchResults() {
     const [numResults, setNumResults] = React.useState(0);
     const [pageNum, setPageNum] = React.useState(0);
 
-    const {search} = useParams();
+    const { search } = useParams();
     const navigate = useNavigate()
-    const {setContent, setError, setLoading, render} = useLoading()
+    const { setContent, setError, setLoading, render } = useLoading()
 
     const getData = async (page: number) => {
-        try{
+        try {
             setLoading(true)
             const url = (`/api/game/?search=${encodeURIComponent(search as string)}&page=${page}`)
             const response = await axios.get(url)
             setSearchResults(response.data.results)
             setNumResults(response.data.count)
             setLoading(false)
-        } catch(error) {
+        } catch (error) {
             console.log(error)
             setError(true)
             setLoading(false)
@@ -33,12 +33,12 @@ export default function SearchResults() {
 
 
     React.useEffect(() => {
-       getData(1)
+        getData(1)
     }, [])
 
 
     setContent(
-        <Grid 
+        <Grid
             container
             spacing={2}
             sx={{
@@ -75,6 +75,11 @@ export default function SearchResults() {
                             headerName: 'Description',
                             field: 'description',
                             flex: 4,
+                        },
+                        {
+                            headerName: 'Date Released',
+                            field: 'date_released',
+                            flex: 1,
                         },
                         {
                             headerName: 'Copy Sold',

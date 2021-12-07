@@ -61,10 +61,14 @@ export default function GameDetail() {
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="body1">
+                    Date Released: {gameData?.date_released}
+                </Typography>
+            </Grid>
+            <Grid item xs={12}>
+                <Typography variant="body1">
                     Copies Sold: {gameData?.copies_sold}
                 </Typography>
             </Grid>
-
         </Grid>
 
     )

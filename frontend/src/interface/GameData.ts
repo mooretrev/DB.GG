@@ -3,4 +3,5 @@ export default interface GameData {
     description: string;
     coverart: string;
     copies_sold: number;
+    date_released: string;
 }

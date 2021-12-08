@@ -9,6 +9,7 @@ import theme from './styles/Theme';
 import Home from './components/Home';
 import GameDetail from './components/GameDetail'
 import TopBar from './TopBar';
+import SearchResults from './components/SearchResults';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <TopBar />
         <BrowserRouter>
           <Routes>
+            <Route path="/search/:search" element={<SearchResults />} />
             <Route path="/game/:id" element={<GameDetail />} />
             <Route path="/" element={<Home />} />
           </Routes>

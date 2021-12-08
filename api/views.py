@@ -8,7 +8,7 @@ class GameView(ModelViewSet):
     serializer_class = serializers.GameSerializer
     filterset_fields = '__all__'
     ordering_fields = '__all__'
-    search_fields = ['name']
+    search_fields = ['name', 'description', 'date_released']
 
 
 class PublisherView(ModelViewSet):
